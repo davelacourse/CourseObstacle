@@ -6,7 +6,7 @@ public class GestionCollision : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (!_estTouche)
+        if (!_estTouche && collision.transform.tag == "Player")
         {
             GetComponent<MeshRenderer>().material.color = Color.red;
 
