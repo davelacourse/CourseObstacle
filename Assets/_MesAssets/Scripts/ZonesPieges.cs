@@ -13,6 +13,7 @@ public class ZonesPieges : MonoBehaviour
 
     private Vector3 _direction;
     private List<Rigidbody> _listeRb = new List<Rigidbody>();
+    private bool _estActive = false;
 
     private void Start()
     {
@@ -26,8 +27,14 @@ public class ZonesPieges : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Rigidbody rb = _piege.GetComponent<Rigidbody>();
-        //rb.useGravity = true;
-        //rb.AddForce(_direction * _intensiteForce);
+        if(other.transform.CompareTag("Player") && !_estActive)
+        {
+            foreach (var rb in _listeRb)
+            {
+                rb.useGravity = true;
+                rb.AddForce(_direction * _intensiteForce);
+            }
+            _estActive = true;
+        }
     }
 }

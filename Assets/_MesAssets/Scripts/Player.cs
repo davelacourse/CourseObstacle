@@ -48,4 +48,9 @@ public class Player : MonoBehaviour
                 _vitesseRotationJoueur * Time.deltaTime);
         }
     }
+
+    public void FinDePartie()
+    {
+        this.gameObject.SetActive(false);
+    }
 }

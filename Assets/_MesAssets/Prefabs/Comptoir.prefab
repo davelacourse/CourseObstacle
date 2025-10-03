@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27673fb18a7908c4aa4c882537ac8a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _materielCollision: {fileID: 2100000, guid: 8f9319412f153ce4cb68f9d94bb63f61, type: 2}
 --- !u!1 &6901781326942782451
 GameObject:
   m_ObjectHideFlags: 0
