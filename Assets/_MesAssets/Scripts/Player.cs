@@ -38,7 +38,14 @@ public class Player : MonoBehaviour
 
         // Appliquer une force dans la direction voulu
         //_rb.AddForce(_direction * Time.fixedDeltaTime * _vitesseJoueur);
-        
+
+        // Vérifie si le joueur touche un sol avec un raycast
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 0.2f);
+
+        // SI il ne touche pas au sol applique une force vers le sol
+        if (!isGrounded)
+            _rb.AddForce(Vector3.down * 500f, ForceMode.Acceleration);
+
         //Rotation du joueur dans la direction du mouvement
         if (_direction != Vector3.zero)
         {
