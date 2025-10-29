@@ -21,20 +21,46 @@ public class GameManager : MonoBehaviour
     //---------------------------------------------------------------
 
 
+    [SerializeField] private GameObject _panneauPause = default(GameObject);
     private int _nbCollisions;
+    public int NbCollisions => _nbCollisions; // accesseur public de l'attribut _nbCollisions
+
     private float _tempsFinNiveau;
-    private float _tempsFinNiveau2;
-    private int _accrochageNiveau1;
+    private bool _enPause = false;
 
     
     private void Start()
     {
         _nbCollisions = 0;
+        UIGame.Instance.ChangerCollisions();
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Pause"))
+        {
+            TogglePause();
+        }
+    }
+
+    private void TogglePause()
+    {
+        _enPause = !_enPause;
+        _panneauPause.SetActive(_enPause);
+        if (_enPause)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     public void AugmenterCollisions()
     {
         _nbCollisions++;
+        UIGame.Instance.ChangerCollisions();
     }
 
     public void FinNiveau()
