@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_MesAssets/Scenes/SceneDepart.unity
+    guid: 4dfcee48bebaade4b9d2a974ca434b56
+  - enabled: 1
     path: Assets/_MesAssets/Scenes/Scene1.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
@@ -14,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_MesAssets/Scenes/Scene3.unity
     guid: 3b88690ac7d8ec14f89c5c6e081fc649
+  - enabled: 1
+    path: Assets/_MesAssets/Scenes/SceneFin.unity
+    guid: dea2fee5ade6c5647a567cb675e12a56
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
